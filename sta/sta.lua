@@ -13,7 +13,7 @@ wifi.setmode(wifi.STATION)
 wifi.sta.config("DoitRemoteWireless","12345678")--ssid and password
 wifi.sta.connect()
 local cnt = 0
-tmr.alarm(3, 1000, 1, function() 
+tmr.alarm(0, 1000, 1, function() 
     if (wifi.sta.getip() == nil) and (cnt < 20) then 
     	print("Trying Connect to Router, Waiting...")
     	cnt = cnt + 1 
